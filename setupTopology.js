@@ -23,7 +23,7 @@ const main = async () => {
     durable: true,
     autoDelete: false,
     arguments: {
-      'x-dead-letter-exchange': 'DeadLetterExchange'
+      'x-dead-letter-exchange': DLX_NAME
     }
   })
   await channel.bindQueue(QUEUE_NAME, EXCHANGE_NAME, '#');
